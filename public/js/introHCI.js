@@ -29,10 +29,10 @@ function addProjectDetails(e) {
 	console.log("User clicked on project " + idNumber);
 	$.get(`/project/${idNumber}`,function(data) {
 	console.log(data);
-	$('#' + `${projectID}` + " .details").html(`<img src=${data.image}>`)
-	$('#' + `${projectID}` + " .details").html(`<p>${data.title}</p>`)
-	$('#' + `${projectID}` + " .details").html(`<p>${data.date}</p>`)
-	$('#' + `${projectID}` + " .details").html(`<p>${data.summary}</p>`)
-
+	$('#' + `${projectID}` + " .details").html("<img src=" + `${data.image}` + ">" + 
+		`<p>${data.title}</p>` +
+		`<p>${data.date}</p>` +
+		`<p>${data.summary}</p>`
+		)
 	})
 }
